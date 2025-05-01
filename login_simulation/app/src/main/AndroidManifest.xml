@@ -24,6 +24,10 @@
 
         <activity android:name=".LoginSuccessActivity"></activity>
 
+        <activity android:name=".RegisterActivity" />
+
+        <activity android:name=".RecoveryActivity" />
+
     </application>
 
 </manifest>
