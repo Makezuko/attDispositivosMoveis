@@ -20,6 +20,7 @@ class LoginSuccessActivity : AppCompatActivity() {
 
         val successMessage = findViewById<TextView>(R.id.successMessage)
         val logoutButton = findViewById<Button>(R.id.logoutButton)
+        val kanbanButton = findViewById<Button>(R.id.kanbanButton)
 
         val user = auth.currentUser
         if (user == null) {
@@ -36,6 +37,12 @@ class LoginSuccessActivity : AppCompatActivity() {
             auth.signOut()
             Toast.makeText(this, "Sessão encerrada com sucesso", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finishAffinity()
+        }
+
+        kanbanButton.setOnClickListener {
+            val intent = Intent(this, KanbanActivity::class.java)
             startActivity(intent)
             finishAffinity()
         }

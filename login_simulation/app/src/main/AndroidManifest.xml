@@ -28,6 +28,8 @@
 
         <activity android:name=".RecoveryActivity" />
 
+        <activity android:name=".KanbanActivity" />
+
     </application>
 
 </manifest>

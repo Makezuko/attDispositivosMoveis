@@ -23,19 +23,16 @@ class MainActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
         auth = FirebaseAuth.getInstance()
 
+        if (savedInstanceState == null) {
+            auth.signOut()
+        }
+
         val emailEditText = findViewById<EditText>(R.id.email)
         val passwordEditText = findViewById<EditText>(R.id.password)
         val loginButton = findViewById<Button>(R.id.loginButton)
         val errorMessage = findViewById<TextView>(R.id.errorMessage)
         val showPasswordButton = findViewById<ImageButton>(R.id.showPasswordButton)
         val debugButton = findViewById<Button>(R.id.debugButton)
-
-        val user = auth.currentUser
-        if (user != null) {
-            val intent = Intent(this, LoginSuccessActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
 
         var isPasswordVisible = false
 
@@ -98,6 +95,13 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (isFinishing) {
+            auth.signOut()
         }
     }
 }

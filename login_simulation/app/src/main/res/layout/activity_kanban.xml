@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_marginTop="100dp"
+    android:padding="16dp"
+    tools:context=".KanbanActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@android:color/transparent"
+        android:showDividers="middle"
+        android:dividerPadding="8dp">
+
+        <!-- To Do -->
+        <TextView
+            android:id="@+id/tvTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Do"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTodo"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="4dp"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvEmptyTodo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhuma tarefa To Do"
+            android:textAlignment="center"
+            android:textColor="#888888"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Doing -->
+        <TextView
+            android:id="@+id/tvDoing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doing"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDoing"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="4dp"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvEmptyDoing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhuma tarefa Doing"
+            android:textAlignment="center"
+            android:textColor="#888888"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Priority -->
+        <TextView
+            android:id="@+id/tvPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Priority"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPriority"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="4dp"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvEmptyPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhuma tarefa Priority"
+            android:textAlignment="center"
+            android:textColor="#888888"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Meeting -->
+        <TextView
+            android:id="@+id/tvMeeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meeting"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMeeting"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="4dp"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvEmptyMeeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhuma tarefa Meeting"
+            android:textAlignment="center"
+            android:textColor="#888888"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
