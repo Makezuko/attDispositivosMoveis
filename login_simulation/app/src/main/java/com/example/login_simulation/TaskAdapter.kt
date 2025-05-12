@@ -14,8 +14,7 @@ class TaskAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(task: Task) {
             binding.tvTitle.text = task.title
-            binding.tvCreatedBy.text = "Criado por: ${task.createdBy ?: "-"}"
-            binding.tvModifiedBy.text = "Modificado por: ${task.modifiedBy ?: "-"}"
+            binding.tvDescription.text = task.description ?: ""
 
             binding.root.setOnClickListener {
                 onTaskClicked?.invoke(task)
