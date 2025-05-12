@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:layout_marginTop="100dp"
     android:padding="16dp"
     tools:context=".KanbanActivity">
 
@@ -18,24 +16,42 @@
         android:showDividers="middle"
         android:dividerPadding="8dp">
 
-        <!-- To Do -->
-        <TextView
-            android:id="@+id/tvTodo"
+        <Button
+            android:id="@+id/btnVoltarLoginSuccess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="To Do"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:text="Voltar"
+            android:layout_marginBottom="0dp"> </Button>
+
+        <!-- To Do Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="0dp">
+
+            <TextView
+                android:id="@+id/tvTodo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="To Do"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddTodo"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTodo"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:nestedScrollingEnabled="false"
-            android:layout_marginBottom="4dp"
-            android:clipToPadding="false"
-            android:paddingBottom="8dp" />
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
 
         <TextView
             android:id="@+id/tvEmptyTodo"
@@ -44,27 +60,37 @@
             android:text="Nenhuma tarefa To Do"
             android:textAlignment="center"
             android:textColor="#888888"
-            android:visibility="gone"
-            android:layout_marginBottom="12dp" />
+            android:visibility="gone" />
 
-        <!-- Doing -->
-        <TextView
-            android:id="@+id/tvDoing"
-            android:layout_width="wrap_content"
+        <!-- Doing Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Doing"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/tvDoing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Doing"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddDoing"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDoing"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:nestedScrollingEnabled="false"
-            android:layout_marginBottom="4dp"
-            android:clipToPadding="false"
-            android:paddingBottom="8dp" />
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
 
         <TextView
             android:id="@+id/tvEmptyDoing"
@@ -73,27 +99,37 @@
             android:text="Nenhuma tarefa Doing"
             android:textAlignment="center"
             android:textColor="#888888"
-            android:visibility="gone"
-            android:layout_marginBottom="12dp" />
+            android:visibility="gone" />
 
-        <!-- Priority -->
-        <TextView
-            android:id="@+id/tvPriority"
-            android:layout_width="wrap_content"
+        <!-- Priority Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Priority"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/tvPriority"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Priority"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddPriority"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPriority"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:nestedScrollingEnabled="false"
-            android:layout_marginBottom="4dp"
-            android:clipToPadding="false"
-            android:paddingBottom="8dp" />
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
 
         <TextView
             android:id="@+id/tvEmptyPriority"
@@ -102,27 +138,37 @@
             android:text="Nenhuma tarefa Priority"
             android:textAlignment="center"
             android:textColor="#888888"
-            android:visibility="gone"
-            android:layout_marginBottom="12dp" />
+            android:visibility="gone" />
 
-        <!-- Meeting -->
-        <TextView
-            android:id="@+id/tvMeeting"
-            android:layout_width="wrap_content"
+        <!-- Meeting Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Meeting"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/tvMeeting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meeting"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAddMeeting"
+                android:layout_width="55dp"
+                android:layout_height="40dp"
+                android:text="+" />
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMeeting"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:nestedScrollingEnabled="false"
-            android:layout_marginBottom="4dp"
-            android:clipToPadding="false"
-            android:paddingBottom="8dp" />
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
 
         <TextView
             android:id="@+id/tvEmptyMeeting"
@@ -131,8 +177,16 @@
             android:text="Nenhuma tarefa Meeting"
             android:textAlignment="center"
             android:textColor="#888888"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp" />
+            android:visibility="gone" />
+
+        <!-- Logs -->
+        <Button
+            android:id="@+id/btnLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logs"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"></Button>
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

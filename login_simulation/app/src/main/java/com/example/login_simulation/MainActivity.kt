@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.loginButton)
         val errorMessage = findViewById<TextView>(R.id.errorMessage)
         val showPasswordButton = findViewById<ImageButton>(R.id.showPasswordButton)
-        val debugButton = findViewById<Button>(R.id.debugButton)
 
         var isPasswordVisible = false
 
@@ -73,12 +72,6 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
-        debugButton.setOnClickListener {
-            val intent = Intent(this, LoginSuccessActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         val goToRegister = findViewById<TextView>(R.id.goToRegister)
         goToRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -95,13 +88,6 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (isFinishing) {
-            auth.signOut()
         }
     }
 }

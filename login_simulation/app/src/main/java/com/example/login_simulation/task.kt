@@ -1,11 +1,11 @@
 package com.example.login_simulation
 
-import com.google.firebase.Timestamp
-
 data class Task(
-    val title: String? = null,
-    val description: String? = null,
-    val status: String? = null,
-    val `due-to`: Timestamp? = null,
-    val participants: List<String>? = null
+    var id: String = "",
+    var title: String = "",
+    var description: String? = "descrição",
+    var status: String = "",
+    var createdBy: String? = null,
+    var modifiedBy: String? = null,
+    var parentId: String? = null
 )

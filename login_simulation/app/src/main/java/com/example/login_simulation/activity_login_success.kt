@@ -18,7 +18,7 @@ class LoginSuccessActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        val successMessage = findViewById<TextView>(R.id.successMessage)
+        val tvUserEmail = findViewById<TextView>(R.id.tvUserEmail)
         val logoutButton = findViewById<Button>(R.id.logoutButton)
         val kanbanButton = findViewById<Button>(R.id.kanbanButton)
 
@@ -29,8 +29,7 @@ class LoginSuccessActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         } else {
-            Toast.makeText(this, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
-            successMessage.text = "Login realizado com sucesso!"
+            tvUserEmail.text = "${user.email}"
         }
 
         logoutButton.setOnClickListener {
@@ -46,10 +45,5 @@ class LoginSuccessActivity : AppCompatActivity() {
             startActivity(intent)
             finishAffinity()
         }
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        finishAffinity()
     }
 }
